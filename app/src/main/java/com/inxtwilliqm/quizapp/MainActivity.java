@@ -26,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
 
         name = findViewById(R.id.name);
 
+        if (getIntent().hasExtra("username")) {
+            String savedName = getIntent().getStringExtra("username");
+            name.setText(savedName);
+        }
+
         findViewById(R.id.start_quiz).setOnClickListener(v -> startQuiz());
     }
 

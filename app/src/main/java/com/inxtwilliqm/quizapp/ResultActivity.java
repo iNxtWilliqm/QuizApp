@@ -41,7 +41,8 @@ public class ResultActivity extends AppCompatActivity {
         scoreText.setText(String.format("Your score is: %d/%d", score, Quiz.TOTAL_QUESTIONS));
 
         restart.setOnClickListener(v -> {
-            Intent restartIntent = new Intent(this, MainActivity.class);
+            Intent restartIntent = new Intent(this, QuizActivity.class);
+            restartIntent.putExtra("username", name);
             startActivity(restartIntent);
             finish();
         });
